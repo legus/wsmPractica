@@ -6,6 +6,3 @@ CREATE TABLE Salon (
     ubicacion VARCHAR(100),
     tipo VARCHAR(50)
 );
---CREATE USER 'DaniJay10'@'localhost' IDENTIFIED BY 'git123';
---GRANT ALL PRIVILEGES ON Colegio.* TO 'DaniJay10'@'localhost';
---FLUSH PRIVILEGES;
