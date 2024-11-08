@@ -6,3 +6,13 @@ CREATE TABLE Salon (
     ubicacion VARCHAR(100),
     tipo VARCHAR(50)
 );
+
+
+--taba Juan Arias--
+create table docente (
+
+    cedula int PRIMARY KEY,
+    nombre varchar(100) is not NULL,
+    asignatura varchar(30) is not NULL,
+    horas int
+);
