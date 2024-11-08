@@ -12,7 +12,7 @@ CREATE TABLE Salon (
 create table docente (
 
     cedula int PRIMARY KEY,
-    nombre varchar(100) is not NULL,
-    asignatura varchar(30) is not NULL,
+    nombre varchar(100) not NULL,
+    asignatura varchar(30) not NULL,
     horas int
 );
