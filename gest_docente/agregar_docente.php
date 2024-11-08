@@ -7,16 +7,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $asignatura = $_POST["asignatura"];
     $horas = $_POST["horas"];
 
-    $stmt = $conn->prepare("INSERT INTO docente (cedula, nombre, asignatura, horas) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("isss", $cedula, $nombre, $asignatura, $horas);
 
-    if ($stmt->execute()) {
-        $message = "Nuevo docente agregado exitosamente.";
+    $checkStmt = $conn->prepare("SELECT * FROM docente WHERE cedula = ?");
+    $checkStmt->bind_param("i", $cedula);
+    $checkStmt->execute();
+    $result = $checkStmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $message = "La cédula ya está registrada en el sistema, Por favor ingrese una diferente .";
     } else {
-        $message = "Error: " . $stmt->error;
+
+        $stmt = $conn->prepare("INSERT INTO docente (cedula, nombre, asignatura, horas) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("isss", $cedula, $nombre, $asignatura, $horas);
+
+        if ($stmt->execute()) {
+            $message = "Nuevo docente agregado exitosamente.";
+        } else {
+            $message = "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
     }
 
-    $stmt->close();
+    $checkStmt->close();
     $conn->close();
 }
 ?>
