@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Programas Academicos</title>
+    <title>gestion de programas academicos</title>
    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-4 text-center">Gestión de Programas Académicos</h1>
+        <h1 class="mt-4 text-center">gestion de programas academicos</h1>
         <div class="card my-4">
             <div class="card-header">
-                <h2>Agregar Programa Académico</h2>
+                <h2>agregar programa academico</h2>
             </div>
             <div class="card-body">
                 <form id="programForm">
                     <div class="form-group">
-                        <label for="programName">Nombre del Programa:</label>
+                        <label for="programName">nombre del programa:</label>
                         <input type="text" id="programName" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="programCode">Código del Programa:</label>
+                        <label for="programCode">codigo del programa:</label>
                         <input type="text" id="programCode" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="programDuration">Duración (en años):</label>
+                        <label for="programDuration">duracion (en años):</label>
                         <input type="number" id="programDuration" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Guardar Programa</button>
+                    <button type="submit" class="btn btn-primary btn-block">guardar programa</button>
                 </form>
             </div>
         </div>
-
-        <!-- Lista de programas académicos -->
         <div class="card">
             <div class="card-header">
-                <h2>Programas Académicos</h2>
+                <h2>programas academicos</h2>
             </div>
             <ul id="programList" class="list-group list-group-flush"></ul>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
